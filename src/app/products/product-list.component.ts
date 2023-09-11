@@ -9,6 +9,13 @@ import { Component } from "@angular/core";
 
 export class ProductListComponent{
   pageTitle: string = "Showe list";
-  
+  products: any[] = [
+    {
+        "productID" : 2,
+        "productName" : "Garden Cart",
+        "productCode" : "GDN-0023"
+    }
+  ]
+
 
 }

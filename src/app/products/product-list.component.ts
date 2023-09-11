@@ -20,9 +20,9 @@ export class ProductListComponent{
     {
         "productID" : 2,
         "productName" : "Nike",
-        "productCode" : "GDN-0023",
+        "productCode" : "FJ0686",
         "releaseDate": "March 10, 2021",
-        "description": "15 gallon capacity rolling garden cart",
+        "description": "Shoe for run",
         "price" : 200.00,
         "startRating" : 4.0,
         "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/7ff2e824-a8e5-482a-aedf-8a7604c0a401/pegasus-40-eliud-kipchoge-road-running-shoes-zT4Swk.png"

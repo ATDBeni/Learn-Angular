@@ -9,6 +9,7 @@ import { Component } from "@angular/core";
 
 export class ProductListComponent{
   pageTitle: string = "Showe list";
+  showImg:boolean = false;
   imageWidth: number = 50;
   imageMargin: number = 2;
   products: any[] = 
@@ -75,7 +76,10 @@ export class ProductListComponent{
         "imageUrl": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/49e100a4-6f50-4ac6-9dd9-4410185b0d43/invincible-3-road-running-shoes-LbMlVN.png"
     },
 
- ]
+ ];
+toggleImage():void{
 
-
+ this.showImg = !this.showImg;
+ 
+}
 }

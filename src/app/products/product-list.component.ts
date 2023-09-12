@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { IProduct } from "./product";
 
 
@@ -10,18 +10,32 @@ import { IProduct } from "./product";
 
 })
 
-export class ProductListComponent{
+export class ProductListComponent implements OnInit{
   pageTitle: string = "Showe list";
   showImg:boolean = false;
-  listFilter : string = '';
-  imageWidth: number = 100;
+   imageWidth: number = 100;
   imageHeight:number = 100
   imageMargin: number = 5;
+
+  private _listFilter: string = ' ' ;
+  get listFilter() : string {
+    return this._listFilter;
+  }
+  set listFilter(value:string){
+    this._listFilter = value;
+    console.log('In setter:', value);
+    this.filteredProducts = this.performeFilter(value)
+  }
+filteredProducts: IProduct[] = [];
+
+
+
+
   products: IProduct[] = 
   [
 
     {   "productID" : 2,
-        "productName" : "Nike Pegasus ",
+        "productName" : " Nike Pegasus ",
         "productCode" : "NIK-3697",
         "releaseDate": "2023",
         "description": "Shoe for run",
@@ -31,7 +45,7 @@ export class ProductListComponent{
     },
     {
         "productID" : 2,
-        "productName" : "Nike Vaporfly  ",
+        "productName" : " Nike Vaporfly  ",
         "productCode" : "NIK-4854",
         "releaseDate": "2023",
         "description": "Nike shoe",
@@ -41,7 +55,7 @@ export class ProductListComponent{
     },
     {
         "productID" : 4,
-        "productName" : "Nike Structure  ",
+        "productName" : " Nike Structure  ",
         "productCode" : "NIK-0908",
         "releaseDate": "2023",
         "description": "Nike shoe",
@@ -51,7 +65,7 @@ export class ProductListComponent{
     },
     {
         "productID" : 5,
-        "productName" : "Nike Pegasus  ",
+        "productName" : " Nike Pegasus  ",
         "productCode" : "NIK-2549",
         "releaseDate": "2023",
         "description": "Nike shoe",
@@ -61,7 +75,7 @@ export class ProductListComponent{
     },
     {
         "productID" : 6,
-        "productName" : "Nike InfinityRN  ",
+        "productName" : " Nike InfinityRN  ",
         "productCode" : "NIK-4560",
         "releaseDate": "2023",
         "description": "Nike shoe",
@@ -71,7 +85,7 @@ export class ProductListComponent{
     },
     {
         "productID" : 7,
-        "productName" : "Nike Invincible ",
+        "productName" : " Nike Invincible ",
         "productCode" : "NIK-0890",
         "releaseDate": "2023",
         "description": "Nike shoe",
@@ -81,12 +95,18 @@ export class ProductListComponent{
     },
 
  ];
+performeFilter(filterBy: string): IProduct[] {
+    filterBy = filterBy.toLocaleLowerCase();
+    return this.products.filter((product: IProduct)  =>  
+      product.productName.toLocaleLowerCase().includes(filterBy));
+}
+
 toggleImage():void{
 
  this.showImg = !this.showImg;
 
 }
 ngOnInit(): void{
-    console.log('In OnInit')
+    
 }
-}
+} 

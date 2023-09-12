@@ -1,0 +1,25 @@
+thead{
+    color: #337AB7;
+}
+tbody{
+    background: linear-gradient(#e66465, #9198e5);
+}
+.card-body{
+    background-color: #649b88;
+
+}
+
+td{
+    background-color: #337AB7;
+    color:white;
+}
+th{
+    background-color: #9198e5;
+}
+input{
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+        
+}

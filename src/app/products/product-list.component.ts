@@ -106,7 +106,14 @@ toggleImage():void{
  this.showImg = !this.showImg;
 
 }
+
 ngOnInit(): void{
-    
+  this.listFilter = ' nike'
 }
+
+  onRatingClicked(message: string):void{
+    this.pageTitle = 'product List ' + message;
+}
+
+
 } 
